@@ -23,6 +23,7 @@ function receiveError(json) {
 };
 
 export function fetchData(url) {
+  console.log('fetch')
   return function(dispatch) {
     dispatch(requestData());
     return axios({
