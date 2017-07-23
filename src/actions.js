@@ -1,51 +1,37 @@
 import * as types from './actionTypes';
 import axios from 'axios';
-//import { pushState } from 'redux-react-router';
 
-function requestData() {
+const requestData = () => {
   return {type: types.REQ_DATA}
 };
 
-function receiveData(json) {
-  console.log('recieved: ', json)
+const receiveData = (json) => {
   return{
-    type: types.RECV_DATA,
+    type: types.GET_TITLES,
     data: json
   }
 };
 
-function receiveError(json) {
-  console.log('error: ', json)
+const receiveError = (json) => {
   return {
     type: types.RECV_ERROR,
     data: json
   }
 };
 
-
-
-
-export function fetchData(url) {
-  console.log('fetch: ', url)
+export const fetchData = (url, headers) => {
   return function(dispatch) {
     dispatch(requestData());
     return axios({
-      //method: 'post',
       url: url,
-      withCredentials: true,
       timeout: 20000,
-
-      headers: {'ws-api': '2.1'},
-      //TODO: make these variables
+      headers: headers,
     })
       .then(function(response) {
-        console.log(response)
         dispatch(receiveData(response.data));
       })
       .catch(function(response){
-        console.log(response)
         dispatch(receiveError(response.data));
-      //  dispatch(pushState(null,'/error'));
       })
   }
 };

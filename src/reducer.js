@@ -1,5 +1,3 @@
-import GET_TITLES from './actions.js'
-
 const INITIAL_STATE = {
   titles: []
 }
@@ -7,8 +5,9 @@ const INITIAL_STATE = {
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case 'GET_TITLES':
-    return Object.assign({}, state, {tiles: action.titles});
+    return Object.assign({}, state, {titles: action.data});
   default:
     return state;
   }
 }
+

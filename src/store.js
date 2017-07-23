@@ -8,6 +8,6 @@ const createAppStore = compose(
 
 export default function configureStore(initialState){
   const store = createAppStore(reducer, initialState);
-
   return store;
 };
+

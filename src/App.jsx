@@ -8,12 +8,12 @@ import {fetchData} from './actions';
 
 const store = configureStore();
 const loadData = () => {
-  store.dispatch(fetchData('https://hoopla-ws-dev.hoopladigital.com/kinds/7/titles/featured?offset=0&limit=51&kindId=7'));
+  store.dispatch(fetchData('https://hoopla-ws-dev.hoopladigital.com/kinds/7/titles/featured?offset=0&limit=51&kindId=7', {'ws-api': '2.1'}));
 }
 
 class App extends Component {
   render() {
-    console.log(store)
+    //would normaly load on enter using redux router
     loadData()
     return (
       <Provider store={store}>
