@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import TitlesComponent from '../../components/Titles'
 
-const Titles = (props) => {
-  console.log(props)
+const TitlesContainer = (props) => {
   return (
-    <div>Container</div>
+    <TitlesComponent titles={props.titles} />
   )
 }
 
@@ -14,5 +14,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-
-export default connect(mapStateToProps, null)(Titles)
+export default connect(mapStateToProps, null)(TitlesContainer)
