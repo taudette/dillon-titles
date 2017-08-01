@@ -2,6 +2,7 @@ import React from 'react';
 
 const renderTitle = (title) => {
   let imagePath = 'https://d2snwnmzyr8jue.cloudfront.net/{artKey}_270.jpeg'.replace('{artKey}', title.artKey)
+  console.log(title)
   return(
     imagePath, title.titleId &&
     <li key={title.titleId}>
