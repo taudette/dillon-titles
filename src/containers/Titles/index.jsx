@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import TitlesComponent from '../../components/Titles'
 
 const TitlesContainer = (props) => {
+  console.log(props)
   return (
     <TitlesComponent titles={props.titles} />
   )

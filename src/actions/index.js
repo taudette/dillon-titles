@@ -6,6 +6,7 @@ const requestData = () => {
 };
 
 const receiveData = (json) => {
+  console.log(json)
   return{
     type: types.GET_TITLES,
     data: json
